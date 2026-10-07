@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekolah Pintar - Portal Siswa Ceria</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#235100",
+            "primary-container": "#fed24f",
+            "surface-container-high": "#dee8ff",
+            "tertiary-container": "#a4ea74",
+            "secondary-fixed-dim": "#add455",
+            "outline-variant": "#d1c5ae",
+            "on-secondary-fixed": "#151f00",
+            "on-primary": "#ffffff",
+            "tertiary": "#316b00",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#4d4635",
+            "surface-container-highest": "#d8e3fb",
+            "surface": "#f9f9ff",
+            "surface-container": "#e7eeff",
+            "on-background": "#111c2d",
+            "inverse-surface": "#263143",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#ecf1ff",
+            "background": "#f9f9ff",
+            "on-surface": "#111c2d",
+            "on-error": "#ffffff",
+            "outline": "#7f7662",
+            "on-primary-fixed-variant": "#584400",
+            "tertiary-fixed": "#aff67e",
+            "tertiary-fixed-dim": "#94d965",
+            "primary-fixed": "#ffe08d",
+            "on-secondary-fixed-variant": "#394e00",
+            "surface-dim": "#cfdaf2",
+            "on-primary-container": "#735a00",
+            "on-secondary-container": "#506c00",
+            "on-tertiary-container": "#306a00",
+            "primary": "#745b00",
+            "inverse-primary": "#ecc240",
+            "surface-container-low": "#f0f3ff",
+            "on-tertiary-fixed": "#0a2100",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#ecc240",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "surface-variant": "#d8e3fb",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#c9f16e",
+            "secondary": "#4c6700",
+            "secondary-container": "#c6ee6b",
+            "surface-tint": "#745b00",
+            "on-primary-fixed": "#241a00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "display-hero-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Tactile 3D Buttons & Cards */
+    .btn-tactile-primary {
+      box-shadow: 0 4px 0 #D4A928;
+      transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-tactile-primary:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #D4A928;
+    }
+    .btn-tactile-secondary {
+      box-shadow: 0 4px 0 #5E993B;
+      transition: all 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-tactile-secondary:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #5E993B;
+    }
+    .card-tactile {
+      box-shadow: 0 6px 0 0 rgba(226, 232, 240, 0.9), 0 8px 16px rgba(30, 41, 59, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-tactile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 0 0 rgba(209, 197, 174, 0.6), 0 12px 20px rgba(30, 41, 59, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col">
+<!-- ================= TOP NAVIGATION BAR (Shared Component TopNavBar) ================= -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
+<!-- Brand & School Logo -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-2xl fill" data-icon="school">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-extrabold text-primary dark:text-primary-fixed leading-tight tracking-tight">Sekolah Pintar</span>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Portal Belajar Ceria</span>
+</div>
+</div>
+<!-- Quick Nav Links (TopNavBar array) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 text-label-lg font-label-lg transition-all" href="#beranda">Beranda</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface dark:hover:text-surface pb-1 text-label-lg font-label-lg transition-colors" href="#mata-pelajaran">Mata Pelajaran</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface dark:hover:text-surface pb-1 text-label-lg font-label-lg transition-colors" href="#tugas-kuis">Tugas &amp; Kuis</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface dark:hover:text-surface pb-1 text-label-lg font-label-lg transition-colors" href="#buku-komik">Buku &amp; Komik</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface dark:hover:text-surface pb-1 text-label-lg font-label-lg transition-colors" href="#nilai-rapor">Nilai &amp; Rapor</a>
+</nav>
+<!-- Gamification Counters & Profile / Actions -->
+<div class="flex items-center gap-3">
+<!-- Gamification Counters Pill Group -->
+<div class="hidden sm:flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/60">
+<!-- Bintang / XP -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest shadow-2xs" title="850 XP Bintang">
+<span class="material-symbols-outlined text-amber-500 fill text-lg" data-icon="stars">stars</span>
+<span class="text-label-md font-label-md text-on-surface">850</span>
+</div>
+<!-- Streak Api -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest shadow-2xs" title="Streak Belajar 5 Hari">
+<span class="material-symbols-outlined text-orange-500 fill text-lg" data-icon="local_fire_department">local_fire_department</span>
+<span class="text-label-md font-label-md text-on-surface">5 Hari</span>
+</div>
+<!-- Lencana -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest shadow-2xs" title="12 Lencana Juara">
+<span class="material-symbols-outlined text-emerald-600 fill text-lg" data-icon="military_tech">military_tech</span>
+<span class="text-label-md font-label-md text-on-surface">12</span>
+</div>
+</div>
+<!-- Trailing Icon Actions -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors relative" title="Notifikasi">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="w-2.5 h-2.5 bg-error rounded-full absolute top-2 right-2 border-2 border-surface-container-lowest"></span>
+</button>
+<button class="hidden md:flex items-center gap-1.5 px-3 py-2 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span>Bantuan</span>
+</button>
+<!-- Student Profile Avatar & Grade Label -->
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/60">
+<div class="relative">
+<img alt="Avatar Siswa Ceria dengan Topi Petualang" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container shadow-sm" data-alt="A bright cheerful elementary school student cartoon avatar wearing a cute adventure explorer scout cap and yellow neckerchief. 3D friendly pixar style animation character rendering on a sunny turquoise backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA61BYfeS_y5gCrQMj6Kpil9TRje61Sy8a6dUQqQ_Kv0kCnuQ22DkP2DF-_DuyzBUrYn684h0ACxM6LxUXuunYBMD3pf5eE_2V8VmR3pBkJbG8qG74LQuLIfBOaoPv3epZyjYVd6RbqVXLGVlB2shWFfYegj1C8OkuGA5WP3JJKoqfNhAzsbc6nMB9Medv00PBLpzeW9U2jre6kHeaNLAWNrlCwkWThFinceHsoGRIe"/>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full border border-white">4B</span>
+</div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-surface leading-tight">Budi Pratama</span>
+<span class="text-label-sm font-label-sm text-secondary leading-tight">Lvl 8 Penjelajah</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT CONTAINER ================= -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 md:px-8 py-6 space-y-8">
+<!-- ================= HERO / WELCOME BANNER ================= -->
+<section class="relative overflow-hidden rounded-[24px] bg-gradient-to-r from-primary-fixed via-primary-container to-secondary-fixed p-6 md:p-8 border-2 border-outline-variant/40 shadow-md">
+<!-- Background decorative playful patterns -->
+<div class="absolute -right-8 -bottom-8 w-64 h-64 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute top-4 right-1/3 text-4xl opacity-30 select-none">✨</div>
+<div class="absolute bottom-4 left-1/4 text-3xl opacity-25 select-none">🚀</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Welcome Info -->
+<div class="flex-1 space-y-4 text-center md:text-left">
+<!-- Student Level Badge -->
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest/90 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary-container/80 shadow-2xs">
+<span class="material-symbols-outlined text-amber-500 fill text-lg" data-icon="stars">stars</span>
+<span class="text-label-md font-label-md text-on-surface">Halo, Budi Pratama! (Kelas 4B) 🌟 Level 8 Penjelajah Cilik</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-background tracking-tight">
+            Selamat Pagi Budi! <br class="hidden sm:inline"/>Siap Berpetualang Hari Ini?
+          </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+            Selesaikan 2 misi hari ini untuk membuka lencana istimewa <strong class="text-on-surface underline decoration-secondary decoration-2">"Ilmuwan Cilik Spektakuler"</strong>!
+          </p>
+<!-- Daily Progress Bar Tracker -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm p-3.5 rounded-2xl max-w-lg border border-outline-variant/40">
+<div class="flex justify-between items-center text-label-md font-label-md mb-2">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="task_alt">task_alt</span>
+                Progress Belajar Hari Ini
+              </span>
+<span class="text-secondary font-extrabold text-sm">60% Selesai (3/5 Misi)</span>
+</div>
+<!-- Progress Bar Shell -->
+<div class="w-full h-3.5 bg-outline-variant/30 rounded-full overflow-hidden p-0.5 relative">
+<div class="h-full bg-gradient-to-r from-secondary-container via-secondary to-tertiary-fixed-dim rounded-full transition-all duration-500 flex items-center justify-end pr-1" style="width: 60%">
+<div class="w-2 h-2 bg-white rounded-full shadow-2xs animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Call to Action Button -->
+<div class="pt-2">
+<a class="inline-flex items-center gap-2.5 px-6 py-3.5 bg-secondary text-white font-label-lg text-label-lg rounded-[16px] btn-tactile-secondary shadow-md cursor-pointer" href="#tugas-kuis">
+<span>Mulai Misi Hari Ini</span>
+<span class="text-lg">🚀</span>
+</a>
+</div>
+</div>
+<!-- Cheerful Mascot Illustration -->
+<div class="w-56 h-56 md:w-64 md:h-64 flex-shrink-0 relative">
+<div class="absolute inset-0 bg-primary-fixed/50 rounded-full blur-xl transform scale-90"></div>
+<img alt="Burung Hantu Cilik Pintar Mascot" class="w-full h-full object-contain relative z-10 drop-shadow-lg" data-alt="A cute friendly 3D cartoon baby owl mascot named Burung Hantu Cilik Pintar wearing oversized round spectacles and holding an adventure magnifying glass with a cheerful smile. Vibrant elementary school educational illustration with warm yellow and fresh lime green studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpxbuGUq9hl3KIIsyUbCwrpAzi9YL2kf-xacadstJ9yLaRabJQT7tY6BpFjE6b2YYXhsNp4hvjnLr1RpcGGcQ-eNnTaIVAqoelFUFLZenawhNbzLRIae7T4kX2KFUMuEMB0sg7s2MWpsxVOU5yxC2NVqW4A0uvwwAp8gxQdA8PNl4CX5RgQdWpG7cYqfJeNAsY0oSeot0ptwvJ29XK_BWNpNIBQT-p-Gh3vwsxTZh"/>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 1: JADWAL & TUGAS HARI INI ================= -->
+<section class="space-y-4" id="tugas-kuis">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Jadwal &amp; Tugas Hari Ini</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Senin, 18 November 2024 • Target: 3 Tugas Terjadwal</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-label-md font-label-md text-secondary hover:text-primary transition-colors" href="#">
+<span>Lihat Semua Kalender Tugas</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Assignment Cards (Bento-style Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Task 1: Sedang Dikerjakan (IPA) -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/60 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-2 bg-primary-container"></div>
+<div class="space-y-3 pt-1">
+<div class="flex justify-between items-start gap-2">
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant border border-primary-container">
+                🧪 Ilmu Pengetahuan Alam
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary-container font-extrabold flex items-center gap-1 shadow-2xs">
+<span class="material-symbols-outlined text-xs fill" data-icon="timelapse">timelapse</span>
+                Sedang Dikerjakan
+              </span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface leading-snug">
+              Eksperimen Daur Hidup Kupu-kupu
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">
+              Amati foto metamorfosis dan catat tahapan ulat menjadi kepompong pada lembar kerja virtual.
+            </p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low p-2 rounded-xl">
+<span class="material-symbols-outlined text-amber-600 text-base" data-icon="schedule">schedule</span>
+<span>Batas Waktu: <strong>Hari ini, 14:00 WIB</strong></span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-amber-500 fill" data-icon="stars">stars</span>
+              +50 XP
+            </span>
+<button class="px-5 py-2.5 bg-primary-container text-on-primary-container text-label-md font-label-md rounded-[16px] btn-tactile-primary flex items-center gap-1.5 cursor-pointer">
+<span>Lanjutkan</span>
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Task 2: Belum Dikerjakan (Matematika) -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/60 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-2 bg-secondary-fixed"></div>
+<div class="space-y-3 pt-1">
+<div class="flex justify-between items-start gap-2">
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface font-bold border border-outline-variant/40">
+                🔢 Matematika Seru
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                Belum Dikerjakan
+              </span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface leading-snug">
+              Pecahan Seru &amp; Teka-teki Pizza
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">
+              Bantu koki memotong pizza sesuai nilai pecahan 1/2, 1/4, dan 3/8 dalam kuis interaktif.
+            </p>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low p-2 rounded-xl">
+<span class="material-symbols-outlined text-primary text-base" data-icon="quiz">quiz</span>
+<span>Format: <strong>10 Soal Pilihan Ganda</strong></span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-amber-500 fill" data-icon="stars">stars</span>
+              +70 XP
+            </span>
+<button class="px-5 py-2.5 bg-secondary text-white text-label-md font-label-md rounded-[16px] btn-tactile-secondary flex items-center gap-1.5 cursor-pointer">
+<span>Mulai Kuis</span>
+<span class="material-symbols-outlined text-base" data-icon="sports_esports">sports_esports</span>
+</button>
+</div>
+</div>
+<!-- Task 3: Selesai (Bahasa Indonesia) -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/60 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-white to-surface-container-low/30">
+<div class="absolute top-0 left-0 right-0 h-2 bg-tertiary-container"></div>
+<div class="space-y-3 pt-1">
+<div class="flex justify-between items-start gap-2">
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-tertiary-container/40 text-tertiary font-bold border border-tertiary-container">
+                📚 Bahasa Indonesia
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-container font-extrabold flex items-center gap-1 shadow-2xs">
+<span class="material-symbols-outlined text-xs fill" data-icon="check_circle">check_circle</span>
+                Selesai
+              </span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface leading-snug">
+              Membaca Cerita Fabel Kancil &amp; Buaya
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">
+              Selesai membaca e-book bergambar dan menjawab 5 pesan moral dengan nilai sempurna.
+            </p>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-tertiary bg-tertiary-fixed/30 p-2 rounded-xl border border-tertiary-fixed-dim/40">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+                Nilai Diperoleh:
+              </span>
+<strong class="text-sm font-extrabold">100 / 100 ⭐</strong>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base fill" data-icon="military_tech">military_tech</span>
+              Lencana Didapat
+            </span>
+<button class="px-5 py-2.5 bg-surface-container-high text-on-surface text-label-md font-label-md rounded-[16px] hover:bg-surface-container transition-colors flex items-center gap-1.5 cursor-pointer">
+<span>Lihat Hasil</span>
+<span class="material-symbols-outlined text-base" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2: RUANG BELAJAR INTERAKTIF ================= -->
+<section class="space-y-4" id="mata-pelajaran">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Ruang Belajar Interaktif</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Pilih mata pelajaran favoritmu dan kumpulkan poin petualangan!</p>
+</div>
+</div>
+</div>
+<!-- 4 Subject Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Card 1: Matematika Asyik -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/50 flex flex-col justify-between group cursor-pointer hover:border-primary-container">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="w-12 h-12 rounded-2xl bg-primary-container/40 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                🧮
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-primary-fixed text-on-primary-fixed-variant border border-primary-container">
+                Populer
+              </span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface group-hover:text-primary transition-colors">
+                Matematika Asyik
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                12 Modul &amp; Permainan Logika
+              </p>
+</div>
+<!-- Content format tag -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🎬 Video Animasi 3D
+              </span>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🧩 Teka-Teki
+              </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Lanjutan: Pecahan</span>
+<span class="w-8 h-8 rounded-full bg-primary-container/50 text-on-primary-container flex items-center justify-center group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Card 2: IPA & Lab Mini -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/50 flex flex-col justify-between group cursor-pointer hover:border-secondary">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="w-12 h-12 rounded-2xl bg-secondary-fixed/40 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                🔬
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-secondary-container text-on-secondary-container border border-secondary-fixed">
+                Misi Baru
+              </span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface group-hover:text-secondary transition-colors">
+                Ilmu Pengetahuan Alam
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Modul Interaktif &amp; Virtual Lab
+              </p>
+</div>
+<!-- Content format tag -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🧪 Virtual Lab Mini
+              </span>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🎬 Video Sains
+              </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Lanjutan: Ekosistem</span>
+<span class="w-8 h-8 rounded-full bg-secondary-container/50 text-on-secondary-container flex items-center justify-center group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Card 3: Bahasa Indonesia & Fabel -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/50 flex flex-col justify-between group cursor-pointer hover:border-tertiary-fixed-dim">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="w-12 h-12 rounded-2xl bg-tertiary-container/30 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                🦊
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-surface-container-high text-on-surface">
+                18 Cerita
+              </span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface group-hover:text-tertiary transition-colors">
+                Bahasa Indonesia &amp; Fabel
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Audio-Story &amp; Buku Bergambar
+              </p>
+</div>
+<!-- Content format tag -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🎧 Audio Cerita
+              </span>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                📖 Komik Interaktif
+              </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Lanjutan: Cerita Rakyat</span>
+<span class="w-8 h-8 rounded-full bg-tertiary-container/40 text-on-tertiary-container flex items-center justify-center group-hover:bg-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Card 4: Seni Budaya & Kreativitas -->
+<div class="card-tactile bg-surface-container-lowest rounded-[20px] p-5 border-2 border-outline-variant/50 flex flex-col justify-between group cursor-pointer hover:border-amber-400">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                🎨
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-200 text-amber-900">
+                Kreatif
+              </span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface group-hover:text-amber-800 transition-colors">
+                Seni Budaya &amp; Kreativitas
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Komik Edukasi &amp; Menggambar
+              </p>
+</div>
+<!-- Content format tag -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                📖 Komik Edukasi
+              </span>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface-container-low text-on-surface flex items-center gap-1">
+                🖌️ Studio Gambar
+              </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Lanjutan: Pola Batik</span>
+<span class="w-8 h-8 rounded-full bg-amber-200/60 text-amber-900 flex items-center justify-center group-hover:bg-amber-300 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: KUIS & TANTANGAN MINGGUAN ================= -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left (2 Cols): Arena Cerdas Cermat Kelas 4B -->
+<div class="lg:col-span-2 card-tactile bg-surface-container-lowest rounded-[24px] p-6 border-2 border-outline-variant/60 space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-2xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shadow-2xs">
+<span class="material-symbols-outlined text-2xl fill" data-icon="emoji_events">emoji_events</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Arena Cerdas Cermat Kelas 4B</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Tantangan Mingguan: Musim Penjelajah Cilik</p>
+</div>
+</div>
+<!-- Action buttons for quiz arena -->
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 bg-secondary text-white text-label-md font-label-md rounded-[14px] btn-tactile-secondary flex items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-base" data-icon="bolt">bolt</span>
+<span>Kuis Cepat (5 Mnt)</span>
+</button>
+<button class="px-3 py-2 bg-surface-container-high text-on-surface text-label-md font-label-md rounded-[14px] hover:bg-surface-container transition-colors flex items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-base" data-icon="swords">swords</span>
+<span>Tantang Teman</span>
+</button>
+</div>
+</div>
+<!-- Mini Leaderboard Card Pods -->
+<div class="space-y-2.5">
+<!-- Rank 1 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-amber-50/80 border border-amber-200">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-amber-400 text-amber-950 font-extrabold text-sm flex items-center justify-center shadow-2xs">
+                🥇
+              </span>
+<img alt="Siti Aisyah Avatar" class="w-9 h-9 rounded-full object-cover border border-amber-300" data-alt="A cute portrait of a young girl elementary student cartoon avatar smiling warmly with colorful hair ribbons on a sunny background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA--B5sDBLrhmF2s_9-oKAv5XN6wFDF1Yy86P4gwNtht2Kp90cDNqbiTjr_rFOrJ7W2p8l1aDqL1qskKo4SYU2zllFo48w6Yu1DadAlYeFh088WiDpyR_2EkEi5MdAbwTXX2NrtuShWK952Crqd9X3uSRCNUfx1LgUS39dg3hcULXy97GJR_RetguvwcCdyfb1H-c3ak7QcEb74tZAiK4-7UzlAG_bpEYdy4IwTOqu4"/>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Siti Aisyah</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Lvl 9 • 980 XP</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-amber-200 text-amber-900 rounded-full text-label-sm font-label-sm font-bold">
+              Juara 1 Minggu Ini
+            </span>
+</div>
+<!-- Rank 2 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-slate-300 text-slate-800 font-extrabold text-sm flex items-center justify-center">
+                🥈
+              </span>
+<img alt="Rizky Pratama Avatar" class="w-9 h-9 rounded-full object-cover border border-slate-300" data-alt="A cheerful young elementary student boy avatar wearing stylish eyeglasses and blue shirt with a happy expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPuyY6IzeZxM49pWZBi-z7-LgK_xGdfDrLdVbQHRrAu9CDuuvaO8voKwsGQCKgHABm8aymYmHolRy7vTs3jpr7zDODKGHwrnIIj7xOJfI2EaNPX25TKDDp6XBNMTuolM-NJ_06smD2cKMbmEN1iGm0Rb-bgMrL5RETKurBzuFFUOWdtNWzQoW1KxdsyLnYjKRSSlJADb-11mbHfVjdsIj_5KYF7pMfSG8d1pa6HJkv"/>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Rizky Ramadhan</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Lvl 8 • 910 XP</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">
+              +40 XP selisih
+            </span>
+</div>
+<!-- Rank 3 (CurrentUser: Budi) Highlighted -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-primary-fixed/40 border-2 border-primary-container shadow-2xs">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-amber-600 text-white font-extrabold text-sm flex items-center justify-center shadow-2xs">
+                🥉
+              </span>
+<img alt="Budi Pratama Avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary" data-alt="A cartoon avatar of Budi Pratama with an adventurous cap smiling enthusiastically in front of school books." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjv4nWQG5Ke1DQ0in9Tja7ERUwC2lDFNTzeqWOMbjDTXF9k4zrFtB9rJ8eH8Io-CZfp-_tQ_6ToqPJfb2Fra0VKPBhbLGwKdzX7pEwYhx0KZLnC_FT_X47dmK5FgIhkGoI3icYRsQz3dWd1BRjbrz17Y5xcA3wKs5MKcRue2xxeY_cv7jasOPgPJAN2EQ1LOqbxyThHTUwZy9GPAYwnmGKaUWypvGBR2_LKPUpUHc"/>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="text-label-md font-label-md text-on-surface font-extrabold">Kamu (Budi Pratama)</p>
+<span class="px-2 py-0.2 bg-secondary text-white rounded-full text-[10px] font-bold">Hebat!</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Lvl 8 • 850 XP</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-md font-label-md text-secondary font-extrabold">Posisi #3</span>
+<p class="text-[11px] text-on-surface-variant">Hanya butuh 60 XP lagi!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right (1 Col): Lencana Baru yang Bisa Dibuka -->
+<div class="card-tactile bg-surface-container-lowest rounded-[24px] p-6 border-2 border-outline-variant/60 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-amber-500 fill text-2xl" data-icon="stars">stars</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Lencana Baru</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Selesaikan misi untuk mengumpulkan lencana kehormatan kelas!
+          </p>
+<div class="space-y-3">
+<!-- Badge 1: Master Perkalian -->
+<div class="flex items-center gap-3 p-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/40 hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-2xl shadow-2xs">
+                ✖️
+              </div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface">Master Perkalian</span>
+<span class="text-[11px] font-bold text-secondary">8/10 Soal</span>
+</div>
+<div class="w-full h-2 bg-outline-variant/30 rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<!-- Badge 2: Penjelajah Flora & Fauna -->
+<div class="flex items-center gap-3 p-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/40 hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-2xl shadow-2xs">
+                🌿
+              </div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface">Penjelajah Flora &amp; Fauna</span>
+<span class="text-[11px] font-bold text-secondary">2/3 Misi</span>
+</div>
+<div class="w-full h-2 bg-outline-variant/30 rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 66%"></div>
+</div>
+</div>
+</div>
+<!-- Badge 3: Kolektor Buku -->
+<div class="flex items-center gap-3 p-2.5 rounded-2xl bg-surface-container-low border border-outline-variant/40 opacity-75">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-2xl">
+                🔒
+              </div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface">Kolektor Buku</span>
+<span class="text-[11px] font-bold text-on-surface-variant">Terkunci</span>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1">Baca 5 komik edukasi</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-lowest border-2 border-outline-variant text-on-surface text-label-md font-label-md rounded-[16px] hover:bg-surface-container transition-colors flex items-center justify-center gap-1.5 mt-2 cursor-pointer">
+<span class="material-symbols-outlined text-base" data-icon="workspace_premium">workspace_premium</span>
+<span>Lihat Galeri 12 Lencana Saya</span>
+</button>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="mt-12 bg-surface-container-lowest border-t border-outline-variant/60 py-8">
+<div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-lg fill" data-icon="school">school</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg text-on-surface">Sekolah Pintar • SD Juara Bangsa</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Mendampingi Belajar Anak Indonesia dengan Rasa Bahagia &amp; Penuh Keberanian</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-body-sm font-body-sm text-on-surface-variant">
+<span>Tahun Ajaran 2024/2025</span>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Bantuan Guru</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Portal Orang Tua</a>
+</div>
+</div>
+</footer>
+<!-- ================= MOBILE BOTTOM NAVIGATION BAR (Shared Component BottomNavBar) ================= -->
+<!-- Note: Prohibited on desktop (md:hidden), active on mobile viewport according to Design Shell protocol -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-lg dark:shadow-none">
+<!-- Tab 1: Misi Harian (Active intent for daily portal) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1.5 shadow-sm" href="#beranda">
+<span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Misi Harian</span>
+</a>
+<!-- Tab 2: Pelajaran -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-inverse-on-surface px-4 py-1.5 hover:bg-surface-container transition-colors" href="#mata-pelajaran">
+<span class="material-symbols-outlined text-xl" data-icon="auto_stories">auto_stories</span>
+<span class="text-label-sm font-label-sm mt-0.5">Pelajaran</span>
+</a>
+<!-- Tab 3: Buku & Video -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-inverse-on-surface px-4 py-1.5 hover:bg-surface-container transition-colors" href="#buku-komik">
+<span class="material-symbols-outlined text-xl" data-icon="smart_display">smart_display</span>
+<span class="text-label-sm font-label-sm mt-0.5">Buku &amp; Video</span>
+</a>
+<!-- Tab 4: Prestasi -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-inverse-on-surface px-4 py-1.5 hover:bg-surface-container transition-colors" href="#prestasi">
+<span class="material-symbols-outlined text-xl" data-icon="military_tech">military_tech</span>
+<span class="text-label-sm font-label-sm mt-0.5">Prestasi</span>
+</a>
+</nav>
+<!-- Lightweight Micro-Interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tactile button sound or subtle bounce feedback
+      const buttons = document.querySelectorAll('.btn-tactile-primary, .btn-tactile-secondary');
+      buttons.forEach(btn => {
+        btn.addEventListener('mousedown', () => {
+          btn.style.transform = 'translateY(2px)';
+        });
+        btn.addEventListener('mouseup', () => {
+          btn.style.transform = '';
+        });
+      });
+    });
+  </script>
+</body></html>
