@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { DashboardGuruPage } from './pages/DashboardGuruPage.jsx'
 import { AdministrasiPage } from './pages/AdministrasiPage.jsx'
 import { PortalSiswaPage } from './pages/PortalSiswaPage.jsx'
@@ -23,7 +23,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard-guru" replace />} />
         <Route
@@ -62,7 +62,7 @@ export default function App() {
           {toast}
         </div>
       )}
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
